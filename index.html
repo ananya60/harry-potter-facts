@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .fact {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Harry Potter Facts</h1>
+        <div id="facts-container"></div>
+        <button id="load-facts">Load Facts</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "The Boy Who Lived",
+                "description": "Harry Potter is known as 'The Boy Who Lived' because he survived an attack by the dark wizard Voldemort when he was just a baby, which left him with a lightning-shaped scar on his forehead."
+            },
+            {
+                "fact": "Hogwarts School",
+                "description": "Harry attends Hogwarts School of Witchcraft and Wizardry, which was founded over a thousand years ago by four powerful witches and wizards: Godric Gryffindor, Helga Hufflepuff, Rowena Ravenclaw, and Salazar Slytherin."
+            },
+            {
+                "fact": "The Sorting Hat",
+                "description": "Upon arriving at Hogwarts, students are sorted into one of four houses by the magical Sorting Hat, which considers their personality traits and values. Harry is sorted into Gryffindor."
+            },
+            {
+                "fact": "The Golden Snitch",
+                "description": "In Quidditch, a popular wizarding sport, the Golden Snitch is a small, winged ball that is worth 150 points and must be caught by the Seeker. Harry becomes the youngest Seeker in a century at Hogwarts."
+            },
+            {
+                "fact": "Dumbledore's Army",
+                "description": "In 'Harry Potter and the Order of the Phoenix,' Harry forms a secret group called Dumbledore's Army (D.A.) to teach his fellow students defensive spells and prepare them for the challenges ahead."
+            },
+            {
+                "fact": "The Deathly Hallows",
+                "description": "The story introduces the Deathly Hallows, three powerful magical objects: the Elder Wand, the Resurrection Stone, and the Invisibility Cloak, which together make their possessor the Master of Death."
+            },
+            {
+                "fact": "The Patronus Charm",
+                "description": "Harry learns to cast a Patronus, a protective charm that takes the form of an animal, which helps him ward off Dementors. His Patronus takes the shape of a stag, representing his father, James Potter."
+            },
+            {
+                "fact": "The Forbidden Forest",
+                "description": "The Forbidden Forest is a dark and dangerous place near Hogwarts, home to various magical creatures, including centaurs, unicorns, and Acromantulas (giant spiders)."
+            },
+            {
+                "fact": "The Triwizard Tournament",
+                "description": "In 'Harry Potter and the Goblet of Fire,' Harry is unexpectedly entered into the dangerous Triwizard Tournament, a magical competition between three wizarding schools."
+            },
+            {
+                "fact": "The Final Battle",
+                "description": "The series culminates in the Battle of Hogwarts, where Harry and his friends confront Voldemort and his followers in a climactic showdown that determines the fate of the wizarding world."
+            }
+        ];
+
+        document.getElementById('load-facts').addEventListener('click', () => {
+            const factsContainer = document.getElementById('facts-container');
+            factsContainer.innerHTML = ''; // Clear previous facts
+            facts.forEach(fact => {
+                const factDiv = document.createElement('div');
+                factDiv.classList.add('fact');
+                factDiv.innerHTML = `<strong>${fact.fact}</strong><p>${fact.description}</p>`;
+                factsContainer.appendChild(factDiv);
+            });
+        });
+    </script>
+</body>
+</html>
